@@ -31,6 +31,7 @@ import { PublishResults } from '@/features/sponsor-dashboard/components/PublishR
 import { ScoutTable } from '@/features/sponsor-dashboard/components/Scouts/ScoutTable';
 import { MultiActionModal } from '@/features/sponsor-dashboard/components/Submissions/Modals/MultiActionModal';
 import { Survey } from '@/features/sponsor-dashboard/components/Submissions/Modals/Survey';
+import { PaymentsWalletBar } from '@/features/sponsor-dashboard/components/Submissions/PaymentsWalletBar';
 import { PayoutSection } from '@/features/sponsor-dashboard/components/Submissions/PayoutSection';
 import { SubmissionHeader } from '@/features/sponsor-dashboard/components/Submissions/SubmissionHeader';
 import { SubmissionList } from '@/features/sponsor-dashboard/components/Submissions/SubmissionList';
@@ -537,7 +538,10 @@ export default function BountySubmissions({ slug }: Props) {
               )}
             <TabsContent value="payments">
               {submissions && bounty && (
-                <PayoutSection submissions={submissions} bounty={bounty} />
+                <>
+                  <PaymentsWalletBar />
+                  <PayoutSection submissions={submissions} bounty={bounty} />
+                </>
               )}
             </TabsContent>
           </Tabs>
